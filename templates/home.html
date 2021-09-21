@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Central Bank{% endblock title %}
+
+{% block body %}
+<style>
+    body {
+        background-image: url('static/bank3.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+</style>
+
+<div class="row" style="margin-top: 30vh; display: initial;">
+    <div class="col-lg-5 offset-lg-8"
+        style="background-color: rgb(238, 238, 238); border: 2px solid rgb(78, 75, 75); border-radius: 5px; height: 300px; width: 350px; margin-top: 100px;">
+        <p style="font-size: 2rem; font-weight: 600; color: black; text-align: center; margin-bottom: 70px;">WELCOME TO
+            THE <b>Central Bank</b>
+        </p>
+        <a class="btn btn-warning my-2 fw-bold w-100" href="{% url 'Users' %}" role="button">Users</a>
+        <a class="btn btn-warning my-2 fw-bold w-100" href="{% url 'History' %}" role="button">Transaction
+            History</a>
+    </div>
+</div>
+{% endblock body %}

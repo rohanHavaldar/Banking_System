@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}Transfer{% endblock title %}
+
+{% block body %}
+<div class="container-fluid text-dark py-1 text-center">
+    <h1>TRANSFER MONEY</h1>
+</div>
+
+{% if status %}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+        {{ status }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+{% endif %}
+
+<div class="container1 text-center my-4 mx-150" style="max-width: 500px; margin: auto; border: 2px solid black; border-radius: 8px; background-color: rgb(238, 238, 238);">
+    {% load crispy_forms_tags %}
+
+    <form action="" method="POST" style="padding: 20px;">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" class="btn btn-success my-2" value="Transfer">
+        <a href="{% url 'Users' %}" class="btn btn-primary">Back</a>
+    </form>
+</div>
+
+{% endblock body %}
